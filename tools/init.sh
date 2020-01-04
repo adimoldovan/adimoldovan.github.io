@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 #
 # Initial the Categories/Tags pages and Lastmod for posts.
 # v2.0
