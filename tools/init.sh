@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 #
 # Initial the Categories/Tags pages and Lastmod for posts.
 # v2.0
@@ -25,7 +25,7 @@ check_status() {
 
 
 update_files() {
-  python _scripts/py/init_all.py
+  python3 _scripts/py/init_all.py
   find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
 }
 
