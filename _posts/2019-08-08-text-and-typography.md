@@ -4,7 +4,7 @@ date: 2019-08-08 11:33:00 +0800
 categories: [Blogging, Demo]
 tags: [typography]
 seo:
-  date_modified: 2020-01-04 19:05:41 +0200
+  date_modified: 2020-01-04 20:31:00 +0200
 ---
 
 This Jekyll template totally compatible with Markdown syntax. Now, let's take a look for the text and typography in this theme.

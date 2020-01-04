@@ -4,7 +4,7 @@ date: 2019-08-08 14:10:00 +0800
 categories: [Blogging, Tutorial]
 tags: [writing]
 seo:
-  date_modified: 2020-01-04 19:05:41 +0200
+  date_modified: 2020-01-04 20:31:00 +0200
 ---
 
 ## Naming and Path
