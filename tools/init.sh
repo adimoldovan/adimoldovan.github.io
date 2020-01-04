@@ -12,7 +12,8 @@ CATEGORIES=false
 TAGS=false
 LASTMOD=false
 
-WORK_DIR=$(dirname $(dirname $(realpath "$0")))
+# WORK_DIR=$(dirname $(dirname $(realpath "$0")))
+WORK_DIR=$PWD
 
 check_status() {
   if [[ ! -z $(git status -s) ]]; then
