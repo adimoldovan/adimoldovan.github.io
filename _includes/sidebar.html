@@ -8,15 +8,17 @@
 
 <div id="nav-wrapper">
   <div id="profile-wrapper" class="d-flex flex-column">
-    <div id="avatar" class="d-flex justify-content-center">
+    <!-- <div id="avatar" class="d-flex justify-content-center">
       <a href="{{ site.baseurl }}/" alt="avatar">
-        {% assign avatar = site.avatar %}
+         {% assign avatar = site.avatar %}
         {% if avatar | slice: 0 == '/' %}
           {% assign avatar = avatar | prepend: site.baseurl %}
         {% endif %}
         <img src="{{ avatar }}">
+        
       </a>
-    </div>
+    </div> -->
+    <i class="fa fa-terminal fa-5x" style="color:white;" aria-hidden="true"></i>
 
     <div class="profile-text mt-3">
       <div id="site-title">
@@ -57,13 +59,16 @@
   <a href="https://github.com/{{ site.github.username }}" target="_blank">
     <i class="fab fa-github-alt"></i>
   </a>
-  <a href="https://twitter.com/{{ site.twitter.username }}" target="_blank">
-    <i class="fab fa-twitter"></i>
+  <a href="https://www.linkedin.com/in/{{ site.linkedin.username }}" target="_blank">
+    <i class="fab fa-linkedin"></i>
   </a>
-  {% assign email = site.social.email | split: '@' %}
+  <a href="https://www.instagram.com/{{ site.instagram.username }}" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <!-- {% assign email = site.social.email | split: '@' %}
   <a href="javascript:window.open('mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@'))">
     <i class="fas fa-envelope"></i>
-  </a>
+  </a> -->
   <a href="{{ site.baseurl }}/feed.xml" target="_blank">
     <i class="fas fa-rss"></i>
   </a>
