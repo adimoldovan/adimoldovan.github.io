@@ -6,6 +6,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Adrian Moldovan',
+      favicon: './src/favicon.ico',
     }),
   ],
   devtool: 'inline-source-map',

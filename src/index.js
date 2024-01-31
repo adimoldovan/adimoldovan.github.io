@@ -10,9 +10,11 @@ function contentComponent() {
   const profile = document.createElement('div');
 
   profile.innerHTML = `<img class="profile-picture" src="https://www.gravatar.com/avatar/${hash}?s=200" alt="profile picture" />`;
+
   profile.appendChild(document.createElement('h1')).textContent = data.displayName;
   profile.appendChild(document.createElement('p')).textContent = data.description;
 
+  // eslint-disable-next-line no-restricted-syntax
   for (const account of data.accounts) {
     const link = document.createElement('a');
     link.href = account.url;
@@ -21,6 +23,7 @@ function contentComponent() {
     profile.appendChild(link);
   }
 
+  profile.appendChild(document.createElement('p')).innerHTML = `<img src="https://www.gravatar.com/${hash}.qr?s=20" alt="qr code" />`;
   content.appendChild(profile);
   return content;
 }
