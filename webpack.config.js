@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {index: './src/index.js'},
-    mode: 'development',
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Adrian Moldovan',
