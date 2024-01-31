@@ -11,3 +11,10 @@ header, footer {
 main {
     padding: 20px;
 }
+
+.hello {
+    color: lightgray;
+    font-size: 5rem;
+    font-weight: lighter;
+    text-align: center;
+}
