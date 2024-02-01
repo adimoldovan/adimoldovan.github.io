@@ -6,7 +6,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Adrian Moldovan',
-      favicon: './src/favicon.ico',
+      favicon: './src/assets/favicon.ico',
     }),
   ],
   output: {

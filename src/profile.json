@@ -5,25 +5,25 @@
   "accounts": [
     {
       "url": "https://instagram.com/adim.moldovan",
-      "iconUrl": "https://secure.gravatar.com/icons/instagram.svg",
+      "icon": "instagram.svg",
       "username": "adim.moldovan",
       "name": "Instagram"
     },
     {
       "url": "https://github.com/adimoldovan",
-      "iconUrl": "https://secure.gravatar.com/icons/github.svg",
+      "icon": "github.svg",
       "username": "adimoldovan",
       "name": "GitHub"
     },
     {
       "url": "https://www.linkedin.com/in/adimoldovan/",
-      "iconUrl": "https://secure.gravatar.com/icons/linkedin.svg",
+      "icon": "linkedin.svg",
       "username": "adimoldovan",
       "name": "LinkedIn"
     },
     {
       "url": "https://adimoldovan.tumblr.com",
-      "iconUrl": "https://secure.gravatar.com/icons/tumblr.svg",
+      "icon": "tumblr.svg",
       "username": "adimoldovan",
       "name": "Tumblr"
     }

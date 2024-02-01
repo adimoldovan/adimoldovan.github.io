@@ -14,12 +14,22 @@ function contentComponent() {
   profile.appendChild(document.createElement('h1')).textContent = data.displayName;
   profile.appendChild(document.createElement('p')).textContent = data.description;
 
+  // Import icons
+  const r = require.context('./assets/social', false, /\.(png|jpe?g|svg)$/);
+  const icons = {};
+  // eslint-disable-next-line array-callback-return
+  r.keys().map((item) => { icons[item.replace('./', '')] = r(item); });
+
   // eslint-disable-next-line no-restricted-syntax
   for (const account of data.accounts) {
     const link = document.createElement('a');
     link.href = account.url;
     link.target = '_blank';
-    link.innerHTML = `<img src="${account.iconUrl}" alt="${account.name}"/>`;
+
+    const img = document.createElement('img');
+    img.src = icons[account.icon];
+    img.alt = account.name;
+    link.appendChild(img);
     profile.appendChild(link);
   }
 
