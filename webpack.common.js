@@ -1,12 +1,13 @@
 const path = require('path');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: { index: './src/index.js' },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Adrian Moldovan',
       favicon: './src/assets/favicon.ico',
+      template: './src/index.html',
     }),
   ],
   output: {

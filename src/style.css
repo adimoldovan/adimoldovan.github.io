@@ -1,19 +1,206 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 50px;
+    font-family: Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
     text-align: center;
+    font-size: 28px;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-header, footer {
-    background-color: #f8f9fa;
+#profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 10vw;
 }
 
 #content {
-    padding-top: 10vh;
+    position: relative;
 }
 
 .profile-picture {
     border-radius: 50%;
     height: 200px;
     width: 200px;
+}
+
+section {
+    min-height: 95vh;
+    height: 95vh;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 1vh;
+    text-align: left;
+    align-items: center;
+    padding: 0 5vw;
+    position: relative;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    /* border: 1px dashed red; */
+}
+
+section.active {
+    opacity: 1;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 3em;
+    text-align: right;
+    background: linear-gradient(45deg, #300b75, #d05bf4);
+    opacity: 0.8;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding-right: 10px;
+    /* border: 1px dashed red; */
+}
+
+.section-content {
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    /* border: 1px dashed red; */
+}
+
+@media screen and (max-width: 968px) {
+    section {
+        grid-template-columns: 1fr;
+        gap: 2vh;
+        padding: 15vh 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+    
+    .section-content {
+        text-align: center;
+        padding: 0 3vw;
+        flex: 1;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+    }
+}
+
+@keyframes slideTop {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(3px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(3px);
+        opacity: 0.5;
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+.social-links img {
+    width: 32px;
+    height: 32px;
+}
+
+.section-nav-hint {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    opacity: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(45deg, #3a0699, #d05bf4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+    text-align: center;
+    /* transition: opacity 1.3s ease-in-out, transform 0.3s ease; */
+    pointer-events: auto;
+}
+
+.section-nav-hint:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+section.active .section-nav-hint {
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+section.active .section-nav-hint.hidden {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.section-nav-hint svg {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 0 3px rgba(58, 6, 153, 0.3));
+}
+
+.section-nav-hint.prev {
+    top: 5vh;
+}
+
+.section-nav-hint.prev svg {
+    margin-bottom: -10px;
+}
+
+.section-nav-hint.next {
+    bottom: 5vh;
+}
+
+.section-nav-hint.next svg {
+    margin-top: -10px;
+}
+
+.section-nav-hint .arrow-top {
+    animation: slideTop 1.5s ease-in-out infinite;
+}
+
+.section-nav-hint .arrow-bottom {
+    animation: slideBottom 1.5s ease-in-out infinite;
+}
+
+.section-nav-hint.prev svg {
+    transform: rotate(180deg);
 }
