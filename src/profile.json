@@ -20,6 +20,12 @@
       "icon": "instagram.svg",
       "username": "adim.moldovan",
       "name": "Instagram"
+    },
+    {
+      "url": "https://bsky.app/profile/adimoldovan.bsky.social",
+      "icon": "bluesky.svg",
+      "username": "adimoldovan",
+      "name": "Bluesky"
     }
   ],
   "email": ["adrian", "dot", "moldovan", "at", "hey", "dot", "com"],
