@@ -40,7 +40,7 @@ section {
     min-height: var(--section-height);
     height: var(--section-height);
     display: grid;
-    grid-template-columns: 40% 1fr;
+    grid-template-columns: auto 1fr;
     gap: 10vh;
     text-align: left;
     align-items: center;
@@ -57,7 +57,7 @@ section.active {
 
 .section-title {
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2.5em;
     text-align: right;
     background: var(--color-gradient);
     opacity: 0.8;
@@ -100,7 +100,7 @@ section.active {
 @media screen and (max-width: 968px) {
     section {
         width: 90vw;
-        grid-template-columns: 1fr;
+        grid-template-columns: auto;
         gap: 2vh;
         padding: 15vh 5vw;
         display: flex;
@@ -170,7 +170,7 @@ section.active {
 }
 
 .section-nav-hint {
-    position: absolute;
+    position: fixed;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.8em;
@@ -186,6 +186,7 @@ section.active {
     font-weight: bold;
     text-align: center;
     pointer-events: auto;
+    z-index: 100;
 }
 
 .section-nav-hint:hover {
@@ -213,7 +214,7 @@ section.active .section-nav-hint.hidden {
 }
 
 .section-nav-hint.prev {
-    top: 5vh;
+    top: 20px;
 }
 
 .section-nav-hint.prev svg {
@@ -221,7 +222,7 @@ section.active .section-nav-hint.hidden {
 }
 
 .section-nav-hint.next {
-    bottom: 5vh;
+    bottom: 20px;
 }
 
 .section-nav-hint.next svg {
