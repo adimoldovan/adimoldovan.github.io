@@ -1,6 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
-// eslint-disable-next-line import/no-extraneous-dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: { index: './src/index.js' },
@@ -8,6 +9,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       favicon: './src/assets/favicon.ico',
       template: './src/index.html',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/robots.txt', to: 'robots.txt' },
+      ],
     }),
   ],
   output: {

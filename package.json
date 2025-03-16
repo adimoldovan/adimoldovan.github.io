@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/adimoldovan/adimoldovan.github.io#readme",
   "devDependencies": {
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^6.10.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
