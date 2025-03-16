@@ -106,7 +106,7 @@ section.active {
 @media screen and (max-width: 968px) {
     section {
         width: 90vw;
-        grid-template-columns: auto;
+        grid-template-columns: 1fr;
         gap: 2vh;
         padding: 15vh 5vw;
         display: flex;
