@@ -2,13 +2,7 @@
   "hash": "7e8c7f59463218e76d226f47d869bd0b",
   "displayName": "Adrian Moldovan",
   "description": "I can think, I can code, I can test. Manager of one.",
-  "accounts": [
-    {
-      "url": "https://instagram.com/adim.moldovan",
-      "icon": "instagram.svg",
-      "username": "adim.moldovan",
-      "name": "Instagram"
-    },
+  "accounts": [ 
     {
       "url": "https://github.com/adimoldovan",
       "icon": "github.svg",
@@ -22,10 +16,10 @@
       "name": "LinkedIn"
     },
     {
-      "url": "https://adimoldovan.tumblr.com",
-      "icon": "tumblr.svg",
-      "username": "adimoldovan",
-      "name": "Tumblr"
+      "url": "https://instagram.com/adim.moldovan",
+      "icon": "instagram.svg",
+      "username": "adim.moldovan",
+      "name": "Instagram"
     }
   ],
   "sections": [

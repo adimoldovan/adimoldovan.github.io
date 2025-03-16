@@ -1,8 +1,8 @@
 :root {
     /* Colors */
     --color-primary: #300b75;
-    --color-secondary: #d05bf4;
-    --color-gradient: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    --color-secondary: #a23dc1;
+    --color-gradient: linear-gradient(45deg, var(--color-primary), var(--color-secondary) 50%, var(--color-primary));
     --color-shadow: rgba(58, 6, 153, 0.3);
     --color-text: #333333;
     
@@ -30,25 +30,10 @@ body {
     color: var(--color-text);
 }
 
-#profile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 0 10vw;
-}
-
 #content {
     position: relative;
     margin: 0 auto;
     width: 100%;
-}
-
-.profile-picture {
-    border-radius: 50%;
-    height: var(--profile-picture-size);
-    width: var(--profile-picture-size);
 }
 
 section {
@@ -79,7 +64,6 @@ section.active {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    padding-right: 10px;
     /* border: 1px dashed red; */
 }
 
@@ -89,6 +73,29 @@ section.active {
     align-items: center;
     /* border: 1px dashed red; */
 }
+
+#profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-picture {
+    border-radius: 50%;
+    height: var(--profile-picture-size);
+    width: var(--profile-picture-size);
+}
+
+#profile h2 {
+    background: var(--color-gradient);
+    opacity: 0.8;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 
 @media screen and (max-width: 968px) {
     section {
@@ -159,6 +166,7 @@ section.active {
 .social-links img {
     width: var(--icon-size);
     height: var(--icon-size);
+    transition: fill var(--transition-fast);
 }
 
 .section-nav-hint {

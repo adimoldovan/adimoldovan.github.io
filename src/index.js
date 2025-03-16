@@ -119,10 +119,19 @@ function scrollToPrevious() {
 function createProfileSection(firstSectionId) {
   const profileSection = document.createElement('section');
   profileSection.id = 'profile';
-  profileSection.innerHTML = `<img class="profile-picture" src="https://www.gravatar.com/avatar/${hash}?s=200" alt="profile picture" />`;
 
-  profileSection.appendChild(document.createElement('h1')).textContent = data.displayName;
-  profileSection.appendChild(document.createElement('p')).textContent = data.description;
+  const profileContent = document.createElement('div');
+  profileContent.className = 'profile-content';
+  profileSection.appendChild(profileContent);
+
+  const profilePicture = document.createElement('img');
+  profilePicture.className = 'profile-picture';
+  profilePicture.src = `https://www.gravatar.com/avatar/${hash}?s=200`;
+  profilePicture.alt = 'profile picture';
+  profileContent.appendChild(profilePicture);
+
+  profileContent.appendChild(document.createElement('h1')).textContent = data.displayName;
+  profileContent.appendChild(document.createElement('h2')).textContent = data.description;
 
   // Import icons
   const r = require.context('./assets/social', false, /\.(png|jpe?g|svg)$/);
@@ -147,7 +156,7 @@ function createProfileSection(firstSectionId) {
     socialLinks.appendChild(link);
   });
 
-  profileSection.appendChild(socialLinks);
+  profileContent.appendChild(socialLinks);
 
   const scrollIndicator = createNavHint('next', '', false);
   scrollIndicator.addEventListener('click', () => {
