@@ -83,7 +83,7 @@ function scrollToPrevious() {
   }
 }
 
-function createProfileSectionContent(firstSectionId) {
+function createProfileSection(firstSectionId) {
   const profileSection = document.createElement('section');
   profileSection.id = 'profile';
   profileSection.innerHTML = `<img class="profile-picture" src="https://www.gravatar.com/avatar/${hash}?s=200" alt="profile picture" />`;
@@ -115,7 +115,7 @@ function createProfileSectionContent(firstSectionId) {
 
   profileSection.appendChild(socialLinks);
 
-  const scrollIndicator = createNavHint('next', '');
+  const scrollIndicator = createNavHint('next', '', false);
   scrollIndicator.addEventListener('click', () => {
     scrollToSection(getSectionIdFromTitle(firstSectionId));
   });
@@ -125,7 +125,7 @@ function createProfileSectionContent(firstSectionId) {
 }
 
 function createSections() {
-  createProfileSectionContent(getSectionIdFromTitle(data.sections[0].title));
+  createProfileSection(getSectionIdFromTitle(data.sections[0].title));
 
   // Create Intersection Observer
   const observerOptions = {
