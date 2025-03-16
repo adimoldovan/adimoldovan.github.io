@@ -2,13 +2,7 @@
   "hash": "7e8c7f59463218e76d226f47d869bd0b",
   "displayName": "Adrian Moldovan",
   "description": "I can think, I can code, I can test. Manager of one.",
-  "accounts": [
-    {
-      "url": "https://instagram.com/adim.moldovan",
-      "icon": "instagram.svg",
-      "username": "adim.moldovan",
-      "name": "Instagram"
-    },
+  "accounts": [ 
     {
       "url": "https://github.com/adimoldovan",
       "icon": "github.svg",
@@ -22,10 +16,41 @@
       "name": "LinkedIn"
     },
     {
-      "url": "https://adimoldovan.tumblr.com",
-      "icon": "tumblr.svg",
-      "username": "adimoldovan",
-      "name": "Tumblr"
+      "url": "https://instagram.com/adim.moldovan",
+      "icon": "instagram.svg",
+      "username": "adim.moldovan",
+      "name": "Instagram"
+    }
+  ],
+  "email": ["adrian", "dot", "moldovan", "at", "hey", "dot", "com"],
+  "sections": [
+    {
+      "title": [
+        "I can",
+        "think"
+      ],
+      "content": "I don't just go through the motions — I solve problems. I think about what each test is actually worth, and I write the kind that let me sleep soundly."
+    },
+    {
+      "title": [
+        "I can",
+        "code"
+      ],
+      "content": "Yes, I actually write code. I use AI tools to speed things up, but I can definitely code on my own. Whether I'm solving testing problems at work or tinkering with hobby projects, coding is something I genuinely enjoy doing."
+    },
+    {
+      "title": [
+        "I can",
+        "test"
+      ],
+      "content": "Testing software has been my thing for most of my career. I still genuinely enjoy it, and yeah, I'm pretty good at it too."
+    },
+    {
+      "title": [
+        "manager",
+        "of one"
+      ],
+      "content": "I manage myself pretty well. I take ownership, get things done, and own both my successes and mistakes."
     }
   ]
 }
