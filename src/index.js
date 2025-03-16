@@ -236,9 +236,36 @@ function handleKeyboardNavigation() {
   });
 }
 
+/**
+ * Creates the hire me button and adds it to the page
+ */
+function createHireMeButton() {
+  const button = document.createElement('button');
+  button.className = 'hire-me-button';
+  button.textContent = 'Hire me';
+
+  button.addEventListener('click', () => {
+    const email = data.email
+      .map((part) => {
+        if (part === 'at') return '@';
+        if (part === 'dot') return '.';
+        return part;
+      })
+      .join('');
+    console.log('Email:', email);
+    const subject = encodeURIComponent('Let\'s work together!');
+    const body = encodeURIComponent(`Hi ${data.displayName},\n\nI'd like to discuss a potential opportunity with you.`);
+    const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
+  });
+
+  document.body.appendChild(button);
+}
+
 // Initialize the application
 console.log('Initializing application...');
 createSections();
+createHireMeButton();
 handleKeyboardNavigation();
 document.addEventListener('mousemove', showHintsWithTimeout);
 document.addEventListener('wheel', showHintsWithTimeout);
