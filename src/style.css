@@ -89,6 +89,8 @@ section.active {
 }
 
 #profile h2 {
+    font-size: 1em;
+    font-weight: normal;
     background: var(--color-gradient);
     opacity: 0.8;
     -webkit-background-clip: text;
