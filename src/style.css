@@ -1,12 +1,33 @@
+:root {
+    /* Colors */
+    --color-primary: #300b75;
+    --color-secondary: #d05bf4;
+    --color-gradient: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    --color-shadow: rgba(58, 6, 153, 0.3);
+    --color-text: #333333;
+    
+    /* Layout */
+    --section-height: 95vh;
+    --profile-picture-size: 200px;
+    --icon-size: 32px;
+    --nav-icon-size: 48px;
+    
+    /* Animation */
+    --transition-normal: 1.5s ease-in-out;
+    --transition-fast: 0.2s ease;
+    --scale-hover: 1.1;
+}
+
 body {
     font-family: Helvetica, sans-serif;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
     font-size: 28px;
     min-height: 100vh;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    color: var(--color-text);
 }
 
 #profile {
@@ -20,26 +41,28 @@ body {
 
 #content {
     position: relative;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .profile-picture {
     border-radius: 50%;
-    height: 200px;
-    width: 200px;
+    height: var(--profile-picture-size);
+    width: var(--profile-picture-size);
 }
 
 section {
-    min-height: 95vh;
-    height: 95vh;
+    min-height: var(--section-height);
+    height: var(--section-height);
     display: grid;
     grid-template-columns: 40% 1fr;
-    gap: 1vh;
+    gap: 10vh;
     text-align: left;
     align-items: center;
-    padding: 0 5vw;
+    padding: 0 20vw;
     position: relative;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity var(--transition-normal);
     /* border: 1px dashed red; */
 }
 
@@ -51,7 +74,7 @@ section.active {
     font-weight: bold;
     font-size: 3em;
     text-align: right;
-    background: linear-gradient(45deg, #300b75, #d05bf4);
+    background: var(--color-gradient);
     opacity: 0.8;
     -webkit-background-clip: text;
     background-clip: text;
@@ -61,7 +84,7 @@ section.active {
 }
 
 .section-content {
-    font-size: 0.8em;
+    font-size: 0.9em;
     display: flex;
     align-items: center;
     /* border: 1px dashed red; */
@@ -69,6 +92,7 @@ section.active {
 
 @media screen and (max-width: 968px) {
     section {
+        width: 90vw;
         grid-template-columns: 1fr;
         gap: 2vh;
         padding: 15vh 5vw;
@@ -125,16 +149,16 @@ section.active {
 .social-links a {
     display: flex;
     align-items: center;
-    transition: transform 0.2s ease;
+    transition: transform var(--transition-fast);
 }
 
 .social-links a:hover {
-    transform: scale(1.1);
+    transform: scale(var(--scale-hover));
 }
 
 .social-links img {
-    width: 32px;
-    height: 32px;
+    width: var(--icon-size);
+    height: var(--icon-size);
 }
 
 .section-nav-hint {
@@ -147,34 +171,37 @@ section.active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(45deg, #3a0699, #d05bf4);
+    background: var(--color-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     font-weight: bold;
     text-align: center;
-    /* transition: opacity 1.3s ease-in-out, transform 0.3s ease; */
     pointer-events: auto;
 }
 
 .section-nav-hint:hover {
-    transform: translateX(-50%) scale(1.1);
+    transform: translateX(-50%) scale(var(--scale-hover));
 }
 
 section.active .section-nav-hint {
     opacity: 1;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity var(--transition-normal);
 }
 
 section.active .section-nav-hint.hidden {
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity var(--transition-normal);
 }
 
 .section-nav-hint svg {
-    width: 48px;
-    height: 48px;
-    filter: drop-shadow(0 0 3px rgba(58, 6, 153, 0.3));
+    width: var(--nav-icon-size);
+    height: var(--nav-icon-size);
+    filter: drop-shadow(0 0 3px var(--color-shadow));
+}
+
+.section-nav-hint svg path {
+    stroke: var(--color-primary);
 }
 
 .section-nav-hint.prev {

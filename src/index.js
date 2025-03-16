@@ -5,15 +5,20 @@ const { hash } = data;
 
 const content = document.getElementById('content');
 
-function createNavHint(type, title) {
+function createNavHint(type, title, autoHide = true) {
   const hint = document.createElement('div');
-  hint.className = `section-nav-hint ${type} react-on-mouse-move`;
+  hint.className = `section-nav-hint ${type}`;
+
+  if (autoHide) {
+    hint.classList.add('auto-hide');
+  }
+
   const textContainer = document.createElement('div');
 
   const arrowSvg = `
      <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path class="arrow-top" d="M7 8L12 13L17 8" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path class="arrow-bottom" d="M7 13L12 18L17 13" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path class="arrow-top" d="M7 8L12 13L17 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path class="arrow-bottom" d="M7 13L12 18L17 13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   `;
 
@@ -24,12 +29,11 @@ function createNavHint(type, title) {
 }
 
 function showHintsWithTimeout() {
-  console.log('showHintsWithTimeout');
   const activeSection = document.querySelector('section.active');
   const hints = activeSection ? activeSection.querySelectorAll('.section-nav-hint') : [];
 
   hints.forEach((hint) => {
-    if (!hint.classList.contains('react-on-mouse-move')) {
+    if (!hint.classList.contains('auto-hide')) {
       return;
     }
 
@@ -42,13 +46,10 @@ function showHintsWithTimeout() {
 }
 
 function activateSection(sectionId) {
-  console.log('activateSection', sectionId);
   const sections = Array.from(document.querySelectorAll('section'));
   const targetSection = document.getElementById(sectionId);
   sections.forEach((section) => section.classList.remove('active'));
   targetSection.classList.add('active');
-  // Show nav hints for 5 seconds when section becomes active
-  const hints = targetSection.querySelectorAll('.section-nav-hint');
   showHintsWithTimeout();
 }
 
@@ -67,7 +68,6 @@ function getSectionIdFromTitle(title) {
 }
 
 function scrollToNext() {
-  console.log('scrollToNext');
   const currentSection = document.querySelector('.active');
   const nextSection = currentSection?.nextElementSibling;
   if (nextSection) {
@@ -76,7 +76,6 @@ function scrollToNext() {
 }
 
 function scrollToPrevious() {
-  console.log('scrollToPrevious');
   const currentSection = document.querySelector('.active');
   const prevSection = currentSection?.previousElementSibling;
   if (prevSection) {
