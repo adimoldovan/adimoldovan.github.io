@@ -4,7 +4,7 @@
     --color-secondary: #a23dc1;
     --color-gradient: linear-gradient(45deg, var(--color-primary), var(--color-secondary) 50%, var(--color-primary));
     --color-shadow: rgba(58, 6, 153, 0.3);
-    --color-text: #333333;
+    --color-text: #4a4a4a;
     
     /* Layout */
     --section-height: 95vh;
@@ -86,6 +86,10 @@ section.active {
     border-radius: 50%;
     height: var(--profile-picture-size);
     width: var(--profile-picture-size);
+}
+
+#profile h1 {
+    font-weight: normal;
 }
 
 #profile h2 {
