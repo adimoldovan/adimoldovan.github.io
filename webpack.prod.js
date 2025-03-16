@@ -8,13 +8,19 @@ module.exports = merge(common, {
   optimization: {
     minimize: true,
     minimizer: [
-      '...', // Keep default minimizers
       new TerserPlugin({
         terserOptions: {
-          compress: {
-            drop_console: true, // Remove console.* statements
+          format: {
+            comments: false,
           },
+          compress: {
+            drop_console: true,
+            drop_debugger: true,
+            pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.warn'],
+          },
+          mangle: true,
         },
+        extractComments: false,
       }),
     ],
   },
