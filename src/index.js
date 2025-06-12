@@ -40,7 +40,9 @@ function createNavHint(type, title, autoHide = true) {
  */
 function showHintsWithTimeout() {
   const activeSection = document.querySelector('section.active');
-  const hints = activeSection ? activeSection.querySelectorAll('.section-nav-hint.auto-hide') : [];
+  const hints = activeSection
+    ? activeSection.querySelectorAll('.section-nav-hint.auto-hide')
+    : [];
   console.log(`Showing ${hints.length} hints for section ${activeSection?.id}`);
 
   hints.forEach((hint) => {
@@ -94,7 +96,10 @@ function getSectionIdFromTitle(title) {
 function scrollToNext() {
   const currentSection = document.querySelector('.active');
   const nextSection = currentSection?.nextElementSibling;
-  console.log('Scrolling to next section:', { current: currentSection?.id, next: nextSection?.id });
+  console.log('Scrolling to next section:', {
+    current: currentSection?.id,
+    next: nextSection?.id,
+  });
   if (nextSection) {
     scrollToSection(nextSection.id);
   }
@@ -106,7 +111,10 @@ function scrollToNext() {
 function scrollToPrevious() {
   const currentSection = document.querySelector('.active');
   const prevSection = currentSection?.previousElementSibling;
-  console.log('Scrolling to previous section:', { current: currentSection?.id, previous: prevSection?.id });
+  console.log('Scrolling to previous section:', {
+    current: currentSection?.id,
+    previous: prevSection?.id,
+  });
   if (prevSection) {
     scrollToSection(prevSection.id);
   }
@@ -171,7 +179,11 @@ function createProfileSection(firstSectionId) {
  * Creates and initializes all content sections with navigation and intersection observers
  */
 function createSections() {
-  console.log('Initializing sections from data:', data.sections.length, 'sections found');
+  console.log(
+    'Initializing sections from data:',
+    data.sections.length,
+    'sections found',
+  );
   createProfileSection(getSectionIdFromTitle(data.sections[0].title));
 
   // Create Intersection Observer
@@ -184,7 +196,12 @@ function createSections() {
   const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        console.log('Section intersecting:', entry.target.id, 'Intersection ratio:', entry.intersectionRatio);
+        console.log(
+          'Section intersecting:',
+          entry.target.id,
+          'Intersection ratio:',
+          entry.intersectionRatio,
+        );
         scrollToSection(entry.target.id);
       }
     });
@@ -198,7 +215,9 @@ function createSections() {
     console.log('Creating section:', section.title);
     const sectionElement = document.createElement('section');
     sectionElement.id = getSectionIdFromTitle(section.title);
-    sectionElement.innerHTML = `<div class="section-title">${section.title.join('<br/>')}</div><div class="section-content">${section.content}</div>`;
+    sectionElement.innerHTML = `<div class="section-title">${section.title.join(
+      '<br/>',
+    )}</div><div class="section-content">${section.content}</div>`;
 
     const prevTitle = i === 0 ? 'Profile' : data.sections[i - 1].title.join(' ');
     const prevHint = createNavHint('prev', prevTitle);
@@ -242,7 +261,7 @@ function handleKeyboardNavigation() {
 function createHireMeButton() {
   const button = document.createElement('button');
   button.className = 'hire-me-button';
-  button.textContent = 'Hire me';
+  button.textContent = 'Work with me';
 
   button.addEventListener('click', () => {
     const email = data.email
@@ -253,8 +272,10 @@ function createHireMeButton() {
       })
       .join('');
     console.log('Email:', email);
-    const subject = encodeURIComponent('Let\'s work together!');
-    const body = encodeURIComponent(`Hi ${data.displayName},\n\nI'd like to discuss a potential opportunity with you.`);
+    const subject = encodeURIComponent("Let's work together!");
+    const body = encodeURIComponent(
+      `Hi ${data.displayName},\n\nI'd like to discuss a potential opportunity with you.`,
+    );
     const mailtoUrl = `mailto:${email}?subject=${subject}&body=${body}`;
     window.location.href = mailtoUrl;
   });
