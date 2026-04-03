@@ -11,7 +11,6 @@ export default [
       globals: {
         ...globals.browser,
         process: 'readonly',
-        require: 'readonly',
       },
     },
     rules: {
@@ -33,7 +32,7 @@ export default [
     },
   },
   {
-    files: ['webpack.*.js'],
+    files: ['webpack.*.js', 'eslint.config.js'],
     languageOptions: {
       globals: {
         ...globals.node,

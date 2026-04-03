@@ -143,7 +143,9 @@ function createProfileSection(firstSectionId) {
   profileContent.appendChild(document.createElement('h2')).textContent = data.description;
 
   // Import icons
-  const r = require.context('./assets/social', false, /\.(png|jpe?g|svg)$/);
+  const r = import.meta.webpackContext('./assets/social', {
+    regExp: /\.(png|jpe?g|svg)$/,
+  });
   const icons = {};
   r.keys().map((item) => {
     icons[item.replace('./', '')] = r(item);
