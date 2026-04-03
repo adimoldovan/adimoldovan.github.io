@@ -1,4 +1,5 @@
 import path from 'path';
+import { fileURLToPath } from 'url';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
@@ -21,7 +22,7 @@ export default {
   ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(import.meta.dirname, 'dist'),
+    path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'dist'),
     clean: true,
   },
   module: {
