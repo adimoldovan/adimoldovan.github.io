@@ -274,8 +274,8 @@ function createHireMeButton() {
   button.addEventListener('click', () => {
     const email = data.email
       .map((part) => {
-        if (part === 'at') return '@';
-        if (part === 'dot') return '.';
+        if (part === 'at') { return '@'; }
+        if (part === 'dot') { return '.'; }
         return part;
       })
       .join('');
