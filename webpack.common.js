@@ -1,11 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: { index: './src/index.js' },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.SINGLE_SECTION': JSON.stringify(process.env.SINGLE_SECTION || 'false'),
+    }),
     new HtmlWebpackPlugin({
       favicon: './src/assets/favicon.ico',
       template: './src/index.html',

@@ -2,6 +2,7 @@ import './style.css';
 import data from './profile.json';
 
 const { hash } = data;
+const singleSection = process.env.SINGLE_SECTION === 'true';
 const content = document.getElementById('content');
 
 /**
@@ -166,12 +167,14 @@ function createProfileSection(firstSectionId) {
 
   profileContent.appendChild(socialLinks);
 
-  const scrollIndicator = createNavHint('next', '', false);
-  scrollIndicator.addEventListener('click', () => {
-    scrollToSection(getSectionIdFromTitle(firstSectionId));
-  });
+  if (!singleSection) {
+    const scrollIndicator = createNavHint('next', '', false);
+    scrollIndicator.addEventListener('click', () => {
+      scrollToSection(getSectionIdFromTitle(firstSectionId));
+    });
+    profileSection.appendChild(scrollIndicator);
+  }
 
-  profileSection.appendChild(scrollIndicator);
   content.appendChild(profileSection);
 }
 
@@ -185,6 +188,11 @@ function createSections() {
     'sections found',
   );
   createProfileSection(getSectionIdFromTitle(data.sections[0].title));
+
+  if (singleSection) {
+    activateSection('profile');
+    return;
+  }
 
   // Create Intersection Observer
   const observerOptions = {
@@ -287,6 +295,8 @@ function createHireMeButton() {
 console.log('Initializing application...');
 createSections();
 createHireMeButton();
-handleKeyboardNavigation();
-document.addEventListener('mousemove', showHintsWithTimeout);
-document.addEventListener('wheel', showHintsWithTimeout);
+if (!singleSection) {
+  handleKeyboardNavigation();
+  document.addEventListener('mousemove', showHintsWithTimeout);
+  document.addEventListener('wheel', showHintsWithTimeout);
+}
