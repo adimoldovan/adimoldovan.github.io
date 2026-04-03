@@ -26,6 +26,12 @@
       "icon": "bluesky.svg",
       "username": "adimoldovan",
       "name": "Bluesky"
+    },
+    {
+      "url": "https://x.com/adimmoldovan",
+      "icon": "x.svg",
+      "username": "adimmoldovan",
+      "name": "X"
     }
   ],
   "email": ["adrian", "dot", "moldovan", "at", "hey", "dot", "com"],
